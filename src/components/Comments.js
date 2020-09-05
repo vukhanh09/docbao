@@ -18,9 +18,9 @@ export default class Comments extends Component{
     
       handleSubmit(event) {
         this.setState({
-            arrayComment:this.state.arrayComment.push(this.state.value)
+            arrayComment:this.state.arrayComment.concat(this.state.value),
+            value:''
         })
-        console.log(this.state.arrayComment)
       }
 
 
@@ -36,13 +36,13 @@ export default class Comments extends Component{
                         cs=srgb&dl=pexels-nextvoyage-1461974.jpg&fm=jpg" height="50" width="50" alt="Customer" className='image'/>
                     </Col>
 
-                    <div> 
-                        <input type='text' onChange={this.handleChange}/>
+                    <Col>
+                        <input type='text' value={this.state.value} onChange={this.handleChange}/>
                         <button onClick={this.handleSubmit} >Submit</button>
                         <Col>
                             <Render arrayComment={this.state.arrayComment}/>
                         </Col>
-                    </div>
+                    </Col>
 
                 </Row>
             </div>
@@ -51,6 +51,7 @@ export default class Comments extends Component{
 }
 
 function Render({arrayComment}){
+    console.log(arrayComment)
     return(
         <div>
             {
