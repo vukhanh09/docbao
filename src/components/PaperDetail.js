@@ -45,7 +45,6 @@ export default class Paper extends Component{
                 </Row>
             </div>
             <div>
-            <h3>ksadmsa</h3>
                 <Comments/>
             </div>
             </div>
